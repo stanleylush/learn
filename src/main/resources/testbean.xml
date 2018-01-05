@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!-- <bean id="beanPostProcessor" class="com.stanley.lus.bean.MyBeanPostProcessor"/>
+
+    <bean id="instantiationAwareBeanPostProcessor" 
+    	class="com.stanley.lus.bean.MyInstantiationAwareBeanPostProcessor"/>
+
+    <bean id="beanFactoryPostProcessor" class="com.stanley.lus.bean.MyBeanFactoryPostProcessor"/>
+    
+    <bean id="person" class="com.stanley.lus.bean.Person" init-method="myInit"
+        destroy-method="myDestory" scope="singleton" p:name="张三" p:address="广州"
+        p:phone="15900000000" /> -->
+        
+    <!-- BeanLife -->
+	<bean id="beanlife" class="com.stanley.lus.bean.BeanLife" init-method="begin" destroy-method="end"> 
+		<constructor-arg value="beanlife construct param"></constructor-arg> 
+		<property name="beanProperty" value="beanlife cycle"></property>
+	</bean>
+	<!-- beanPostProcessor -->
+	<bean id="beanPostProcessor" class="com.stanley.lus.bean.BeanLifePostProcessor"></bean>
+</beans>
